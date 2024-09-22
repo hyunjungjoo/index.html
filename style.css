@@ -1,0 +1,126 @@
+body {
+  font-family: "Trebuchet", sans-serif;
+  font-size: 12pt;
+  font-weight: 300;
+  line-height: 125%;
+  margin: 3% 20% 5% 15%; /* top right bottom left */
+}
+
+hr {
+    display: block;
+    border: 1px dotted gray;
+    align: left;
+    width: 65%;
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    margin-left: 0%;
+    margin-right: 10%;
+    border-width: 1px;
+}
+
+table, ul {
+    margin: 0em;
+    margin-bottom: 0.5em;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Raleway", sans-serif;
+  color: #404040;
+  margin-bottom: 0.5em;
+  line-height: 100%;
+}
+
+b {
+    font-family: "Raleway", sans-serif;
+    color: #404040;
+}
+
+h1, .contact {
+  font-family: "Raleway", sans-serif;
+  /*font-weight: bold;*/
+  color: #404040;
+}
+
+.title, .author {
+  display: none;
+}
+
+.footer {
+  font-family: "Trebuchet", sans-serif;
+  font-size: 90%;
+  color: #ababab;
+  text-align: right;
+  line-height: 150%;
+}
+
+hr.footer {
+  margin-top: 5%;
+}
+
+.code, pre {
+  font-family: "Droid Sans Mono";
+  font-size: 10pt;
+  line-height: 110%;
+}
+
+a:link {
+    color: #c45f0d;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #c43c33;
+}
+
+a:hover {
+    color: #e0731a;
+    text-decoration: underline;
+}
+
+.nav {
+  width: 20%;
+  margin: 0;
+  padding: 0px 10px;
+  list-style-type: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 110%;
+  text-align: right;
+  color: #0b7737;
+  float: right;
+  overflow: hidden;
+}
+
+.nav li a {
+  display: block;
+  padding: 5px 5px;
+  color: #034c3f;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.nav li a:hover {
+  background-color: #f6f6f6;
+}
+
+.nav li a.active {
+  background-color: #003333;
+  color: white;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+table {
+  border-spacing: 10px;
+  text-align: left;
+}
+
+td {
+  vertical-align: text-bottom;
+}

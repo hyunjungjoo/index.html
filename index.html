@@ -4,69 +4,119 @@
 <meta charset="utf-8">
 <meta name="author" content="Hyunjung Joo">
 <title>Hyunjung Joo</title>
-<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  /* Styling for the overall body */
+  body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Styling for the container that holds the header and content */
+  .container {
+    margin-left: 200px; /* Space for the left sidebar */
+    padding: 10px;
+  }
+
+  /* Styling for the navigation (Home and CV) */
+  ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    position: fixed; /* Fix it to the left */
+    height: 100%; /* Full-height */
+    background-color: #f1f1f1; /* Background color */
+  }
+
+  ul.nav li {
+    display: block;
+    padding: 8px;
+    text-align: left;
+  }
+
+  ul.nav li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 8px 16px;
+  }
+
+  ul.nav li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
+  /* Style for the rest of the page */
+  .content {
+    margin-left: 200px; /* Align content after the sidebar */
+    padding: 1px 16px;
+  }
+
+  .contact {
+    margin-bottom: 20px;
+  }
+
+</style>
+
 <!--[if lt IE 9]>
     <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Hyunjung Joo">
-<meta name="keywords" content="Hyunjung Joo,linguistics,Rutgers,phonology,computational linguistics">
 <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
 <link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
 
-    <script type="text/javascript">
-     function changeImg(image){
-         var pic = document.getElementById("pic");
-         pic.src = image;
-     }
-    </script>
+<script type="text/javascript">
+ function changeImg(image){
+     var pic = document.getElementById("pic");
+     pic.src = image;
+ }
+</script>
 
-<div style="margin-left:10%">
-
-<h1 id="hyunjung-joo">Hyunjung Joo</h1>
-
-<p class="contact">
-<b>Department of Linguistics, Rutgers University</b><br>
-18 Seminary Pl, New Brunswick, NJ<br>
-<a href="mailto:hyunjung.joo@rutgers.edu">hyunjung.joo@rutgers.edu</a></p>
-</div>
-
+<!-- Navigation Bar on the Left -->
 <ul class="nav">
-  <!-- Links -->
   <li><a href="index.html">Home</a></li>
   <li><a href="CV.pdf">CV</a></li>
 </ul>
 
-<div style="margin-left:18%;margin-right:10%;padding:1px 16px;">
-    <p> <img id="pic" src="me.jpg" alt="Mug shot" style="float:right;height:250px;margin:10px 50px 10px 20px;border-radius:10px">
-        <!-- <p> <img src="me.jpg" alt="Mug shot" style="float:right;height:170px;margin:10px 20px"><!--  --> 
+<!-- Main Content Area -->
+<div class="container">
+  <h1 id="hyunjung-joo">Hyunjung Joo</h1>
+  <p class="contact">
+    <b>Department of Linguistics, Rutgers University</b><br>
+    18 Seminary Pl, New Brunswick, NJ<br>
+    <a href="mailto:hyunjung.joo@rutgers.edu">hyunjung.joo@rutgers.edu</a>
+  </p>
 
-        I'm a PhD student at the Rutgers <a href="https://ling.rutgers.edu">Department of Linguistics</a>.
-        My research uses computational and mathematical approaches to study fundamental questions in phonological theory.</p>
+  <div class="content">
+    <p>
+      <img id="pic" src="me.jpg" alt="Mug shot" style="float:right;height:250px;margin:10px 50px 10px 20px;border-radius:10px">
+      I'm a PhD student at the Rutgers <a href="https://ling.rutgers.edu">Department of Linguistics</a>. My research uses computational and mathematical approaches to study fundamental questions in phonological theory.
+    </p>
 
     <h4>Research interests:</h4>
     <table>
-        <tr>
-            <td>
-                <ul>
-                    <li>formal language theory</li>
-                    <li>model theory/logic</li>
-                    <li>representation</li>
-                </ul>
-            </td>
-            <td>
-                <ul>
-                    <li>laboratory phonology</li>
-                    <li>prosody</li>
-                    <li>intonation</li>
-                </ul>
-            </td>
-        </tr>
+      <tr>
+        <td>
+          <ul>
+            <li>formal language theory</li>
+            <li>model theory/logic</li>
+            <li>representation</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>laboratory phonology</li>
+            <li>prosody</li>
+            <li>intonation</li>
+          </ul>
+        </td>
+      </tr>
     </table>
-
+  </div>
+</div>
 
 </body>
 </html>

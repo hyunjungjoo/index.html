@@ -1,129 +1,82 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="author" content="Hyunjung Joo">
-<title>Hyunjung Joo</title>
-<style type="text/css">
-  /* Styling for the overall body */
-  body {
-    font-family: 'Lato', sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+/* Styling for the overall body */
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Styling for the navigation (Home and CV) */
-  ul.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 180px;
-    position: fixed; /* Fix it to the left */
-    height: 100%; /* Full-height */
-    background-color: #f1f1f1; /* Background color */
-  }
+/* Styling for the navigation (Home and CV) */
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 180px;
+  position: fixed; /* Fix it to the left */
+  height: 100%; /* Full-height */
+  background-color: #f1f1f1; /* Background color */
+}
 
-  ul.nav li {
-    display: block;
-    padding: 8px;
-    text-align: left;
-  }
+ul.nav li {
+  display: block;
+  padding: 8px;
+  text-align: left;
+}
 
-  ul.nav li a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    padding: 8px 16px;
-  }
+ul.nav li a {
+  text-decoration: none;
+  color: black;
+  display: block;
+  padding: 8px 16px;
+}
 
-  ul.nav li a:hover {
-    background-color: #555;
-    color: white;
-  }
+ul.nav li a:hover {
+  background-color: #555;
+  color: white;
+}
 
-  /* Container for the content */
-  .container {
-    margin-left: 200px; /* Space for the sidebar */
-    max-width: 800px; /* Narrow the width of the page */
-    padding: 10px;
-    margin-right: auto; /* Center the content */
-    margin-left: auto; /* Center the content */
-  }
+/* Container for the content */
+.container {
+  margin-left: 200px; /* Space for the sidebar */
+  max-width: 800px; /* Narrow the width of the page */
+  padding: 10px;
+  margin-right: auto; /* Center the content */
+  margin-left: auto; /* Center the content */
+}
 
-  /* Styling for the name (h1) */
-  h1 {
-    margin: 0;
-    padding-left: 16px;
-    font-size: 36px;
-    font-weight: 800;
-  }
+/* Styling for the name (h1) */
+h1 {
+  margin: 0;
+  padding-left: 16px;
+  font-size: 36px;
+  font-weight: 800;
+}
 
-  /* Contact information styling */
-  .contact {
-    margin: 0;
-    padding-left: 16px;
-  }
+/* Contact information styling */
+.contact {
+  margin: 0;
+  padding-left: 16px;
+}
 
-  /* Style for the body content */
-  .content {
-    margin-left: 0;
-    padding-left: 16px;
-  }
+/* Style for the body content */
+.content {
+  margin-left: 0;
+  padding-left: 16px;
+}
 
-  /* Image styling: increased size */
-  #pic {
-    float: right;
-    height: 250px;
-    margin: 10px 50px 10px 20px;
-    border-radius: 10px;
-  }
-</style>
-</head>
+/* Image styling: increased size */
+#pic {
+  float: right;
+  height: 250px;
+  margin: 10px 50px 10px 20px;
+  border-radius: 10px;
+}
 
-<body>
+/* Reduced gap between heading and content */
+h4 {
+  margin-top: 10px;  /* Adjust this as needed */
+  margin-bottom: 5px; /* Reduce the bottom margin */
+}
 
-<!-- Navigation Bar on the Left -->
-<ul class="nav">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="CV.pdf">CV</a></li>
-</ul>
-
-<!-- Main Content Area -->
-<div class="container">
-  <h1 id="hyunjung-joo">Hyunjung Joo</h1>
-  <p class="contact">
-    <b>Department of Linguistics, Rutgers University</b><br>
-    18 Seminary Pl, New Brunswick, NJ<br>
-    <a href="mailto:hyunjung.joo@rutgers.edu">hyunjung.joo@rutgers.edu</a>
-  </p>
-
-  <div class="content">
-    <p>
-      <img id="pic" src="mee.jpg" alt="Mug shot">
-      I'm a PhD student at the Rutgers <a href="https://ling.rutgers.edu">Department of Linguistics</a>. My research uses computational, mathematical approaches as well as laboratory approaches to study fundamental questions in phonological theory.
-    </p>
-
-    <h4>Research interests:</h4>
-    <table>
-      <tr>
-        <td>
-          <ul>
-            <li>Dormal language theory</li>
-            <li>Model theory/logic</li>
-            <li>Representation</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>Laboratory phonology</li>
-            <li>Prosody</li>
-            <li>Intonation</li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-  </div>
-</div>
-
-</body>
-</html>
+table {
+  margin-top: 5px; /* Reduce the top margin for the table */
+}

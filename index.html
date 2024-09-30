@@ -48,32 +48,35 @@
   }
 
   /* Styling for the name (h1) */
+  .header {
+    display: flex;
+    align-items: center; /* Aligns items (name and image) horizontally */
+    justify-content: space-between; /* Ensures the image stays aligned with the name */
+  }
+
   h1 {
-    margin: 0; /* Ensure no margin for alignment */
-    padding-left: 16px; /* Add padding to match content */
+    margin: 0;
     font-size: 36px;
     font-weight: 800;
   }
 
+  /* Image styling: aligned with the name and wider */
+  #pic {
+    height: auto;
+    width: 200px; /* Adjust width */
+    border-radius: 10px;
+    margin-left: 20px; /* Space between name and image */
+  }
+
   /* Contact information styling */
   .contact {
-    margin: 0;
-    padding-left: 16px; /* Align with the content */
+    margin: 10px 0 20px 0;
   }
 
   /* Style for the body content */
   .content {
     margin-left: 0; /* Same left alignment as name */
     padding-left: 16px; /* Consistent padding */
-  }
-
-  /* Image styling: aligned at the top and wider */
-  #pic {
-    float: right; /* Align to the right of the content */
-    height: auto;
-    width: 400px; /* Widened the image */
-    margin: 0 0 10px 20px; /* Top alignment with the content */
-    border-radius: 10px;
   }
 </style>
 </head>
@@ -88,7 +91,13 @@
 
 <!-- Main Content Area -->
 <div class="container">
-  <h1 id="hyunjung-joo">Hyunjung Joo</h1>
+  
+  <!-- Header with name and image aligned -->
+  <div class="header">
+    <h1 id="hyunjung-joo">Hyunjung Joo</h1>
+    <img id="pic" src="me.jpg" alt="Mug shot">
+  </div>
+
   <p class="contact">
     <b>Department of Linguistics, Rutgers University</b><br>
     18 Seminary Pl, New Brunswick, NJ<br>
@@ -97,7 +106,6 @@
 
   <div class="content">
     <p>
-      <img id="pic" src="me.jpg" alt="Mug shot">
       I'm a PhD student at the Rutgers <a href="https://ling.rutgers.edu">Department of Linguistics</a>. My research uses computational and mathematical approaches to study fundamental questions in phonological theory.
     </p>
 

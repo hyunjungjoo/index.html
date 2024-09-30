@@ -12,12 +12,6 @@
     padding: 0;
   }
 
-  /* Styling for the container that holds the header and content */
-  .container {
-    margin-left: 200px; /* Space for the left sidebar */
-    padding: 10px;
-  }
-
   /* Styling for the navigation (Home and CV) */
   ul.nav {
     list-style-type: none;
@@ -47,33 +41,41 @@
     color: white;
   }
 
-  /* Style for the rest of the page */
+  /* Container for the content */
+  .container {
+    margin-left: 200px; /* Same margin for name and content */
+    padding: 10px;
+  }
+
+  /* Styling for the name (h1) */
+  h1 {
+    margin-left: 0; /* Align with the content */
+    font-size: 36px;
+    font-weight: 800;
+  }
+
+  /* Style for the body content */
   .content {
-    margin-left: 200px; /* Align content after the sidebar */
+    margin-left: 0; /* Same left alignment as name */
     padding: 1px 16px;
   }
 
+  /* Contact information styling */
   .contact {
     margin-bottom: 20px;
   }
 
+  /* Image styling */
+  #pic {
+    float: right;
+    height: 250px;
+    margin: 10px 50px 10px 20px;
+    border-radius: 10px;
+  }
 </style>
-
-<!--[if lt IE 9]>
-    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet"> 
 </head>
 
 <body>
-
-<script type="text/javascript">
- function changeImg(image){
-     var pic = document.getElementById("pic");
-     pic.src = image;
- }
-</script>
 
 <!-- Navigation Bar on the Left -->
 <ul class="nav">
@@ -92,7 +94,7 @@
 
   <div class="content">
     <p>
-      <img id="pic" src="me.jpg" alt="Mug shot" style="float:right;height:250px;margin:10px 50px 10px 20px;border-radius:10px">
+      <img id="pic" src="me.jpg" alt="Mug shot">
       I'm a PhD student at the Rutgers <a href="https://ling.rutgers.edu">Department of Linguistics</a>. My research uses computational and mathematical approaches to study fundamental questions in phonological theory.
     </p>
 

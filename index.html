@@ -8,47 +8,30 @@
     <!-- Google Fonts with specific weights -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
     <style type="text/css">
-        /* Styling for the overall body */
+        /* 전체 페이지 레이아웃 */
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 300; /* 기본: Light */
             font-size: 17px;
             margin: 0;
             padding: 0;
-            line-height: 1.5;
+            line-height: 1.6;
             display: flex;
             flex-direction: row;
+            justify-content: center; /* 콘텐츠를 가운데 정렬 */
+            background-color: #fff;
         }
 
-        /* 큰 제목 (이름 등) */
-        h1 {
-            font-weight: 800; /* ExtraBold */
-            font-size: 45px;
-            color: #080F5B;
-            margin: 0;
-            padding: 10px 0;
-        }
-
-        /* 중간 제목 */
-        h2, h3, h4 {
-            font-weight: 600; /* SemiBold */
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        /* 강조 텍스트에도 SemiBold */
-        strong, b {
-            font-weight: 600;
-        }
-
-        /* Styling for the navigation (Home and CV) */
+        /* 왼쪽 내비게이션 */
         ul.nav {
             list-style-type: none;
             margin-top: 180px;
-            margin-left: 130px;
+            margin-left: 50px;
             padding: 8px;
-            width: 130px;
-            background-color: none;
+            width: 120px;
+            position: fixed; /* 항상 왼쪽에 고정 */
+            left: 0;
+            top: 0;
         }
 
         ul.nav li {
@@ -72,37 +55,72 @@
             color: #244855;
         }
 
-        /* Container for the content */
+        /* 메인 콘텐츠 */
         .container {
             max-width: 850px;
-            padding: 10px;
-            margin-right: 100px;
-            margin-left: 20px;
+            padding: 20px;
+            margin-left: 200px; /* 왼쪽 내비게이션 공간 확보 */
         }
 
-        /* Contact information styling */
+        /* 큰 제목 (이름 등) */
+        h1 {
+            font-weight: 800; /* ExtraBold */
+            font-size: 45px;
+            color: #080F5B;
+            margin: 0;
+            padding: 10px 0;
+            text-align: center; /* 가운데 정렬 */
+        }
+
+        /* 중간 제목 계층 */
+        h2 {
+            font-weight: 600;
+            font-size: 28px;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 22px;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+
+        h4 {
+            font-weight: 600;
+            font-size: 19px;
+            margin-top: 15px;
+            margin-bottom: 6px;
+        }
+
+        /* 강조 텍스트 */
+        strong, b {
+            font-weight: 600;
+        }
+
+        /* 연락처 */
         .contact {
             color: #0D19A3;
             margin: 0;
             padding-left: 0px;
+            text-align: center; /* 가운데 정렬 */
         }
 
-        /* Style for the body content */
+        /* 본문 */
         .content {
-            font-family: 'Montserrat', sans-serif; /* Muli 제거 → Montserrat 적용 */
+            font-family: 'Montserrat', sans-serif;
             font-weight: 300; /* Light */
             color: #2C2E3A;
             font-size: 17px;
-            margin-left: 0;
-            margin-top: 5px;
-            padding-left: 0px;
+            margin-top: 20px;
         }
 
-        /* Image styling: increased size */
+        /* 이미지 */
         #pic {
             float: right;
-            height: 280px;
-            margin: 10px 50px 10px 20px;
+            height: 260px;
+            margin: 10px 40px 10px 20px;
             border-radius: 10px;
         }
 
@@ -110,25 +128,14 @@
             margin-top: 3px;
         }
 
-        a:link {
+        /* 링크 스타일 */
+        a:link, a:visited {
           color: #0D19A3;
           background-color: transparent;
           text-decoration: none;
         }
 
-        a:visited {
-          color: #0D19A3;
-          background-color: transparent;
-          text-decoration: none;
-        }
-
-        a:hover {
-          color: #BB9AB1;
-          background-color: transparent;
-          text-decoration: none;
-        }
-
-        a:active {
+        a:hover, a:active {
           color: #BB9AB1;
           background-color: transparent;
           text-decoration: none;
@@ -158,7 +165,6 @@
       <img id="pic" src="meeee.jpg" alt="Mug shot">
       I'm a PhD student at the <a href="https://ling.rutgers.edu">Department of Linguistics</a> at Rutgers. My research uses computational, mathematical approaches as well as experimental approaches to study fundamental questions in phonological theory.
     </p>
-    <br><br>
     <h4>Research interests:</h4>
     <table>
       <tr>

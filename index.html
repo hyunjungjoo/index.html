@@ -8,39 +8,36 @@
     <!-- Google Fonts with specific weights -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
     <style type="text/css">
-        /* 전체 페이지: 중앙 정렬 레이아웃 */
+        /* 전체 페이지 레이아웃 */
         body {
             font-family: 'Montserrat', sans-serif;
             font-weight: 300; /* 기본: Light */
-            font-size: 18px; /* 가독성 있는 본문 크기 */
+            font-size: 17px;
             margin: 0;
             padding: 0;
-            line-height: 1.7;
+            line-height: 1.6;
             display: flex;
-            justify-content: center;   /* 수평 중앙 */
-            align-items: center;       /* 수직 중앙 */
-            height: 100vh;             /* 뷰포트 높이 맞춤 */
+            flex-direction: row;
+            justify-content: center; /* 콘텐츠를 가운데 정렬 */
             background-color: #fff;
         }
 
-        /* 전체 컨테이너 */
-        .wrapper {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            gap: 60px; /* 네비게이션과 본문 간격 */
-        }
-
-        /* 내비게이션 */
+        /* 왼쪽 내비게이션 */
         ul.nav {
             list-style-type: none;
-            padding: 0;
-            margin: 0;
-            text-align: right;
+            margin-top: 180px;
+            margin-left: 50px;
+            padding: 8px;
+            width: 120px;
+            position: fixed; /* 항상 왼쪽에 고정 */
+            left: 0;
+            top: 0;
         }
 
         ul.nav li {
-            margin: 15px 0;
+            display: block;
+            padding: 8px;
+            text-align: right;
         }
 
         ul.nav li a {
@@ -50,7 +47,7 @@
             font-weight: 600;
             color: #BB9AB1;
             display: block;
-            padding: 4px 8px;
+            padding: 2px 8px;
         }
 
         ul.nav li a:hover {
@@ -58,18 +55,21 @@
             color: #244855;
         }
 
-        /* 본문 컨테이너 */
+        /* 메인 콘텐츠 */
         .container {
             max-width: 850px;
+            padding: 20px;
+            margin-left: 200px; /* 왼쪽 내비게이션 공간 확보 */
         }
 
         /* 큰 제목 (이름 등) */
         h1 {
             font-weight: 800; /* ExtraBold */
-            font-size: 46px;
+            font-size: 45px;
             color: #080F5B;
-            margin: 0 0 10px 0;
-            text-align: center;
+            margin: 0;
+            padding: 10px 0;
+            text-align: center; /* 가운데 정렬 */
         }
 
         /* 중간 제목 계층 */
@@ -102,8 +102,9 @@
         /* 연락처 */
         .contact {
             color: #0D19A3;
-            margin: 0 0 20px 0;
-            text-align: center;
+            margin: 0;
+            padding-left: 0px;
+            text-align: center; /* 가운데 정렬 */
         }
 
         /* 본문 */
@@ -111,14 +112,15 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 300; /* Light */
             color: #2C2E3A;
-            font-size: 18px; /* 가독성 강화 */
+            font-size: 17px;
+            margin-top: 20px;
         }
 
         /* 이미지 */
         #pic {
             float: right;
             height: 260px;
-            margin: 10px 0 20px 30px;
+            margin: 10px 40px 10px 20px;
             border-radius: 10px;
         }
 
@@ -143,50 +145,45 @@
 
 <body>
 
-<div class="wrapper">
-  <!-- Navigation Bar on the Left -->
-  <ul class="nav">
-    <li><a href="index.html">HOME</a></li>
-    <li><a href="CV_Hyunjung Joo.pdf">CV</a></li>
-  </ul>
+<!-- Navigation Bar on the Left -->
+<ul class="nav">
+  <li><a href="index.html">HOME</a></li>
+  <li><a href="CV_Hyunjung Joo.pdf">CV</a></li>
+</ul>
 
-  <!-- Main Content Area -->
-  <div class="container">
-    <h1 id="hyunjung-joo">Hyunjung Joo</h1>
-    <p class="contact">
-      <b>Department of Linguistics, Rutgers University</b><br>
-      18 Seminary Pl, New Brunswick, NJ<br>
-      <a href="mailto:hyunjung.joo@rutgers.edu">hyunjung.joo@rutgers.edu</a>
+<!-- Main Content Area -->
+<div class="container">
+  <h1 id="hyunjung-joo">Hyunjung Joo</h1>
+  <p class="contact">
+    <b>Department of Linguistics, Rutgers University</b><br>
+    18 Seminary Pl, New Brunswick, NJ<br>
+    <a href="mailto:hyunjung.joo@rutgers.edu">hyunjung.joo@rutgers.edu</a>
+  </p>
+
+  <div class="content">
+    <p>
+      <img id="pic" src="meeee.jpg" alt="Mug shot">
+      I'm a PhD student at the <a href="https://ling.rutgers.edu">Department of Linguistics</a> at Rutgers. My research uses computational, mathematical approaches as well as experimental approaches to study fundamental questions in phonological theory.
     </p>
-
-    <div class="content">
-      <p>
-        <img id="pic" src="meeee.jpg" alt="Mug shot">
-        I'm a PhD student at the <a href="https://ling.rutgers.edu">Department of Linguistics</a> at Rutgers. 
-        My research uses computational, mathematical approaches as well as experimental approaches 
-        to study fundamental questions in phonological theory.
-      </p>
-
-      <h4>Research interests:</h4>
-      <table>
-        <tr>
-          <td>
-            <ul>
-              <li>Formal language theory</li>
-              <li>Model theory/logic</li>
-              <li>Representation</li>
-            </ul>
-          </td>
-          <td>
-            <ul>
-              <li>Laboratory phonology</li>
-              <li>Prosody</li>
-              <li>Intonation</li>
-            </ul>
-          </td>
-        </tr>
-      </table>
-    </div>
+    <h4>Research interests:</h4>
+    <table>
+      <tr>
+        <td>
+          <ul>
+            <li>Formal language theory</li>
+            <li>Model theory/logic</li>
+            <li>Representation</li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li>Laboratory phonology</li>
+            <li>Prosody</li>
+            <li>Intonation</li>
+          </ul>
+        </td>
+      </tr>
+    </table>
   </div>
 </div>
 

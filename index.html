@@ -5,29 +5,41 @@
     <meta name="author" content="Hyunjung Joo">
     <meta name="keywords" content="Hyunjung Joo,linguistics,Rutgers,phonology,computational linguistics">
     <title>Hyunjung Joo</title>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Muli|Proza+Libre:500&display=swap" rel="stylesheet">
+    <!-- Google Fonts with specific weights -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&family=Muli&family=Proza+Libre:wght@500&display=swap" rel="stylesheet">
     <style type="text/css">
         /* Styling for the overall body */
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 300; /* 기본: Light */
-    font-size: 17px;
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: row;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300; /* 기본: Light */
+            font-size: 17px;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: row;
+        }
 
-/* 예: 제목에는 SemiBold */
-h1, h2, h3 {
-    font-weight: 600; /* SemiBold */
-}
+        /* 큰 제목 (이름 등) */
+        h1 {
+            font-weight: 800; /* ExtraBold */
+            font-size: 45px;
+            color: #080F5B;
+            margin: 0;
+            padding: 10px 0;
+        }
 
-/* 강조 텍스트에도 SemiBold */
-strong, b {
-    font-weight: 600;
-}
+        /* 중간 제목 */
+        h2, h3, h4 {
+            font-weight: 600; /* SemiBold */
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+
+        /* 강조 텍스트에도 SemiBold */
+        strong, b {
+            font-weight: 600;
+        }
 
         /* Styling for the navigation (Home and CV) */
         ul.nav {
@@ -37,7 +49,6 @@ strong, b {
             padding: 8px;
             width: 130px; /* Adjust the width to fit navigation items */
             background-color: none; /* Background color */
-
         }
 
         ul.nav li {
@@ -69,15 +80,6 @@ strong, b {
             margin-left: 20px; /* Add space to the left for the navigation */
         }
 
-        /* Styling for the name (h1) */
-        h1 {
-            margin: 0;
-            padding: 10px 0;
-            font-size: 45px;
-            color: #080F5B;
-            font-weight: 800;
-            background-color: none; /* Optional background color to highlight the name */
-        }
         /* Contact information styling */
         .contact {
             color: #0D19A3;
@@ -103,37 +105,32 @@ strong, b {
             border-radius: 10px;
         }
 
-        /* Reduced gap between heading and content */
-        h4 {
-            margin-top: 5px;  /* Adjust this as needed */
-            margin-bottom: 5px; /* Reduce the bottom margin */
-        }
-
         table {
             margin-top: 3px; /* Reduce the top margin for the table */
         }
+
         a:link {
           color: #0D19A3;
           background-color: transparent;
           text-decoration: none;
         }
-        
+
         a:visited {
           color: #0D19A3;
           background-color: transparent;
           text-decoration: none;
         }
-        
+
         a:hover {
           color: #BB9AB1;
           background-color: transparent;
           text-decoration: none;
         }
-        
+
         a:active {
           color: #BB9AB1;
           background-color: transparent;
-          text-decoration: none
+          text-decoration: none;
         }
     </style>
 </head>

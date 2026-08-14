@@ -66,10 +66,13 @@
     font-size:14px;
     letter-spacing:.03em;
     color:var(--ink);
-    padding:6px 0;
+    padding:7px 12px;
+    margin:2px 0;
+    border-radius:7px;
+    transition:background-color .15s ease, color .15s ease;
   }
-  nav.side li a:hover{color:var(--mauve-deep);}
-  nav.side li a.current{color:var(--mauve-deep);}
+  nav.side li a:hover{ color:var(--mauve-deep); background:rgba(74,111,165,.08); }
+  nav.side li a.current{ color:var(--mauve-deep); background:rgba(74,111,165,.14); }
 
   main{
     flex:1;

@@ -1,98 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Hyunjung Joo">
-<title>Hyunjung Joo</title>
-<style type="text/css">code{white-space: pre;}</style>
-<!--[if lt IE 9]>
-    <script src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<link rel="stylesheet" href="style.css">
-<meta name="description" content="Hyunjung Joo">
-<meta name="keywords" content="Hyunjung Joo,linguistics,Rutgers,phonology,computational linguistics">
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-<link href="https://fonts.googleapis.com/css?family=Raleway:800&display=swap" rel="stylesheet"> 
+<title>Hyunjung Joo — Papers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2740;
+    --muted:#5B6270;
+    --paper:#FFFFFF;
+    --line:#DAD5C9;
+    --mauve:#4A6FA5;
+    --mauve-deep:#2A3F63;
+    --teal:#1E3A5F;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter',sans-serif; font-weight:300; font-size:16px;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--mauve-deep); text-decoration:none; border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--mauve-deep);}
+  .page{ display:flex; max-width:980px; margin:0 auto; padding:0 24px; }
+  nav.side{ position:sticky; top:0; align-self:flex-start; padding-top:96px; width:150px; flex-shrink:0; }
+  nav.side .label{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+  nav.side ul{ list-style:none; margin:0; padding:0; }
+  nav.side li a{ display:block; font-weight:500; font-size:14px; letter-spacing:.03em; color:var(--ink); padding:7px 12px; margin:2px 0; border-radius:7px; transition:background-color .15s ease, color .15s ease; }
+  nav.side li a:hover{ color:var(--mauve-deep); background:rgba(74,111,165,.08); }
+  nav.side li a.current{ color:var(--mauve-deep); background:rgba(74,111,165,.14); }
+  main{ flex:1; min-width:0; padding:88px 0 100px 56px; border-left:1px solid var(--line); }
+  .eyebrow{ font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); margin:0 0 14px 0; }
+  h1{ font-family:'Playfair Display', serif; font-weight:700; font-size:52px; line-height:1.1; margin:0 0 44px 0; color:var(--mauve-deep); letter-spacing:-0.01em; }
+  section{ margin-top:56px; } section:first-of-type{ margin-top:0; }
+  h2{ font-family:'Playfair Display', serif; font-weight:700; font-size:26px; margin:0 0 4px 0; color:var(--ink); }
+  .section-rule{ width:100%; height:1px; background:var(--line); margin:10px 0 24px 0; position:relative; }
+  .section-rule::after{ content:""; position:absolute; left:0; top:-1px; width:36px; height:3px; background:var(--mauve); }
+
+  .pub-list{ list-style:none; margin:0; padding:0; counter-reset:pub; }
+  .pub-list li{
+    counter-increment:pub;
+    position:relative;
+    padding:16px 0 16px 34px;
+    border-bottom:1px dashed var(--line);
+    font-size:15px;
+  }
+  .pub-list li:last-child{ border-bottom:none; }
+  .pub-list li::before{
+    content:counter(pub);
+    position:absolute; left:0; top:17px;
+    font-size:12.5px; font-weight:500;
+    color:var(--mauve-deep);
+    width:22px; text-align:right;
+  }
+  .pub-list .yr{ color:var(--mauve-deep); font-weight:500; }
+  .pub-list .venue{ font-style:italic; color:var(--muted); }
+  .pub-list .note{
+    display:inline-block;
+    margin-left:6px;
+    font-size:12px;
+    color:var(--teal);
+    border:1px solid var(--mauve);
+    border-radius:999px;
+    padding:1px 10px;
+    font-style:normal;
+  }
+
+  footer{ margin-top:80px; padding-top:20px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); }
+
+  @media (max-width: 760px){
+    .page{ flex-direction:column; padding:0 20px; }
+    nav.side{ position:static; width:auto; padding:28px 0 0 0; }
+    nav.side ul{ display:flex; gap:18px; flex-wrap:wrap; }
+    nav.side li a{ padding:0; }
+    main{ padding:36px 0 70px 0; border-left:none; }
+    h1{ font-size:32px; }
+  }
+</style>
 </head>
-
 <body>
+<div class="page">
 
-    <script type="text/javascript">
-     function changeImg(image){
-         var pic = document.getElementById("pic");
-         pic.src = image;
-     }
-    </script>
+  <nav class="side">
+    <div class="label">Menu</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="education-research.html">About me</a></li>
+      <li><a href="publications.html" class="current">Papers</a></li>
+      <li><a href="presentations.html">Presentations</a></li>
+      <li><a href="CV_Hyunjung Joo_Aug 2026.pdf">CV</a></li>
+    </ul>
+  </nav>
 
-<div style="margin-left:12%">
+  <main>
+    <p class="eyebrow">Hyunjung Joo</p>
+    <h1>Papers</h1>
 
-<h1 id="hyunjung-joo">Hyunjung Joo</h1>
+    <section>
+      <h2>Journal articles</h2>
+      <div class="section-rule"></div>
+      <ol class="pub-list">
 
-<ul class="nav">
-  <!-- Links -->
-  <li><a href="index.html">Home</a></li>
-  <li><a href="papers.html">Papers</a></li>
-  <li><a href="presentations.html">Presentations</a></li>
-  <li><a href="CV.pdf">CV</a></li>
-</ul>
+        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2025</span>). The perception of lexical pitch accent in South Kyungsang Korean: The relevance of accent shape. <span class="venue">Language and Speech.</span></li>
+        <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2024</span>). Focus-induced tonal distribution in Seoul Korean as an edge-prominence language. <span class="venue">Journal of Phonetics.</span></li>
+      </ol>
+    </section>
 
-<h2>Papers</h2>
-<ul>
-    <li>Hatcher, R., <b>Joo, H.</b>, Kim, S., & Cho, T. (Accepted). Focus-induced tonal distribution in Seoul Korean as an edge-prominence language. <i>Journal of Phonetics</i>.</li>
-    <li>Magnotti R., George D., Li Z., Ji J., <b>Joo H.</b>, et al. (2023). DiWBot: A Cooking and DIY Conversation Guidance System. <i>Alexa Prize TaskBot Challenge 2 Proceedings. Amazon Science</i>.</li>
-    <li><b>Joo, H.</b> (2021). <i>Tonal alignment with articulatory gestures in South Kyungsang Korean</i>. Master's thesis, Hanyang University.</li>
-</ul>
+    <section>
+      <h2>Peer-reviewed conference proceedings papers</h2>
+      <div class="section-rule"></div>
+      <ol class="pub-list">
+        <li><b>Joo, H.</b> &amp; Lee, G. (<span class="yr">2026</span>). Deep supervised contrastive learning of pitch contours for robust pitch accent classification in Seoul Korean. <span class="venue">The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026).</span> <span class="note">SAC Highlight</span></li>
+        <li><b>Joo, H.</b> &amp; Jardine, A. (<span class="yr">2025</span>). Intonation as a quantifier-free logical interpretation of metrical and prosodic structure. <span class="venue">Proceedings of the Society for Computation in Linguistics (SCiL 2025), 8(1).</span></li>
+        <li><b>Joo, H.</b> &amp; Avelino, G. (<span class="yr">2025</span>). Prosodic realization of in-situ focus in Tagalog. <span class="venue">Proceedings of the 31st Annual Meeting of the Austronesian Formal Linguistics Association, 31, 62–74.</span></li>
+        <li>Magnotti, R., George, D., Li, Z., Ji, J., <b>Joo, H.</b>, Yu, J., Ravishankar, R., Moe, L., Khalid, B., Zhang, Y., &amp; Stone, M. (<span class="yr">2023</span>). DiWBot: A cooking and DIY conversation guidance system. <span class="venue">Alexa Prize TaskBot Challenge 2 Proceedings, Amazon Science.</span></li>
+        <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). How does focus-induced prominence influence realization of edge tones and segmental anchoring in Seoul Korean? <span class="venue">Proceedings of the 20th International Congress of Phonetic Sciences (ICPhS 2023).</span></li>
+        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Perception of lexical pitch accent and rise shape in South Kyungsang Korean. <span class="venue">Proceedings of the 20th International Congress of Phonetic Sciences (ICPhS 2023).</span></li>
+        <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic structural effects on coarticulatory vowel nasalization in Australian English in comparison to American English. <span class="venue">Proceedings of the 19th International Congress of Phonetic Sciences (ICPhS 2019).</span></li>
+      </ol>
+    </section>
 
-<h2>Presentations</h2>
-<ul>
-    <li><b>Joo, H.</b> & Avelino, G. (2024). Prosodic realization of in-situ focus in Tagalog. <i>31st Meeting of Austronesian Formal Linguistics Association (AFLA 31)</i>, UMass, USA, June 11-14. [oral presentation]</li>
-    <li>Hatcher, R., <b>Joo, H.</b>, et al. (2023). How does focus-induced prominence influence realization of edge tones in Seoul Korean? <i>The 20th International Congress of Phonetic Sciences (ICPhS 2019)</i>, Prague, Czech, August 7-11. [poster presentation]</li>
-</ul>
+    <section>
+      <h2>Abstract-reviewed conference proceedings papers</h2>
+      <div class="section-rule"></div>
+      <ol class="pub-list">
+        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Speech Prosody and Beyond workshop (SPaB 2023), Seoul, South Korea.</span></li>
+        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Phonetics and Phonology in Europe 2023 (PaPE 2023), Nijmegen, the Netherlands.</span></li>
+        <li><b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). Tonal alignment with articulatory gestures in South Kyungsang Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language, Hanyang University, Seoul, South Korea.</span></li>
+        <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). A preliminary report on how focus-induced prominence influences realization of edge tones and segmental anchoring in Seoul Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language, Hanyang University, Seoul, South Korea.</span></li>
+        <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic boundary and prominence effects on vowel nasalization in Australian English versus American English. <span class="venue">The 2nd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language, Hanyang University, Seoul, Korea.</span></li>
+      </ol>
+    </section>
 
-<h2>Awards and Honors</h2>
-<ul>
-    <li>Nijmegen, the Netherlands, June 2-4, Organizers’ Award for Best Oral Presentation at Phonology and Phonetics in Europe 2023 (PaPE 2023), 2023</li>
-    <li>Melbourne, Australia, August 5-9, IPA Student Award at the 19th International Congress of Phonetic Sciences (ICPhS 2019), 2019</li>
-</ul>
+    <section>
+      <h2>Other papers</h2>
+      <div class="section-rule"></div>
+      <ol class="pub-list">
+        <li><b>Joo, H.</b> (<span class="yr">2017</span>). Korean L2 learners' perception of English front vowels, /ɛ/ and /æ/. <span class="venue">English Studies, 37, 109–126.</span></li>
+        <li><b>Joo, H.</b> (<span class="yr">2016</span>). A relationship between Korean EFL learners' stress placement of noun-verb homographs and English proficiency. <span class="venue">SNU Working Papers in English Language and Linguistics, 14, 82–102.</span></li>
+      </ol>
+    </section>
 
-<h2>Research Experience</h2>
-<ul>
-    <li><b>Amazon Taskbot Challenge 2: DiWBot</b> (Director: Matthew Stone & Yongfeng Zhang), Computer Science, Rutgers University, Research assistant, 2023</li>
-    <li><b>Production and perception of cross-linguistic patterns of intergestural timing</b> (Director: Taehong Cho & Sahyang Kim), HIPCS, Hanyang University, Research assistant, 2019-2021</li>
-</ul>
-
-<h2>Teaching Experience</h2>
-<ul>
-    <li><b>Introduction to Linguistic Theory (LING 201)</b>, Linguistics, Rutgers University, Teaching assistant, Fall 2023</li>
-    <li><b>Introduction to Linguistic Theory (LING 201)</b>, Linguistics, Rutgers University, Teaching assistant, Spring 2024</li>
-</ul>
-
-<h2>Scholarship</h2>
-<ul>
-    <li>Hanyang University, Lecture & Research Scholarship, 2019 Spring-2020 Fall</li>
-    <li>Seoul National University, Merit-based Scholarship, 2016 Spring</li>
-</ul>
-
-<h2>Services & Volunteer Activities</h2>
-<ul>
-    <li>MathLing reading group, Linguistics, Rutgers University, Organizer, 2021 Spring-</li>
-    <li>Big data club ‘ToBigs’, 2015-2017</li>
-</ul>
-
-<h2>Techniques</h2>
-<ul>
-    <li>R (Statistical analyses, scripting)</li>
-    <li>Python (basic)</li>
-    <li>SPSS</li>
-    <li>Praat (Speech analyses, scripting)</li>
-</ul>
-
-<h2>Languages</h2>
-<ul>
-    <li>Korean (Native)</li>
-    <li>English (Fluent)</li>
-</ul>
-
-
+    <footer>&copy; Hyunjung Joo</footer>
+  </main>
+</div>
 </body>
 </html>

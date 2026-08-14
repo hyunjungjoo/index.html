@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="author" content="Hyunjung Joo">
-<title>Hyunjung Joo — Papers</title>
+<title>Hyunjung Joo — Presentations</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -17,6 +17,8 @@
     --mauve:#4A6FA5;
     --mauve-deep:#2A3F63;
     --teal:#1E3A5F;
+    --oral:#2A3F63;
+    --poster:#8A6E7E;
   }
   *{box-sizing:border-box;}
   body{
@@ -35,40 +37,45 @@
   nav.side li a.current{ color:var(--mauve-deep); background:rgba(74,111,165,.14); }
   main{ flex:1; min-width:0; padding:88px 0 100px 56px; border-left:1px solid var(--line); }
   .eyebrow{ font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); margin:0 0 14px 0; }
-  h1{ font-family:'Playfair Display', serif; font-weight:700; font-size:52px; line-height:1.1; margin:0 0 44px 0; color:var(--mauve-deep); letter-spacing:-0.01em; }
-  section{ margin-top:56px; } section:first-of-type{ margin-top:0; }
-  h2{ font-family:'Playfair Display', serif; font-weight:700; font-size:26px; margin:0 0 4px 0; color:var(--ink); }
-  .section-rule{ width:100%; height:1px; background:var(--line); margin:10px 0 24px 0; position:relative; }
-  .section-rule::after{ content:""; position:absolute; left:0; top:-1px; width:36px; height:3px; background:var(--mauve); }
+  h1{ font-family:'Playfair Display', serif; font-weight:700; font-size:52px; line-height:1.1; margin:0 0 12px 0; color:var(--mauve-deep); letter-spacing:-0.01em; }
+  .sub{ font-size:14.5px; color:var(--muted); margin:0 0 44px 0; }
+  .legend{ display:flex; gap:14px; margin-bottom:36px; }
+  .legend span{ font-size:12px; padding:3px 12px; border-radius:999px; }
+  .legend .oral{ background:rgba(42,63,99,.08); color:var(--oral); border:1px solid var(--oral); }
+  .legend .poster{ background:rgba(138,110,126,.08); color:var(--poster); border:1px solid var(--poster); }
 
-  .pub-list{ list-style:none; margin:0; padding:0; counter-reset:pub; }
-  .pub-list li{
-    counter-increment:pub;
+  .talk-list{ list-style:none; margin:0; padding:0; counter-reset:talk; }
+  .talk-list li{
+    counter-increment:talk;
     position:relative;
     padding:16px 0 16px 34px;
     border-bottom:1px dashed var(--line);
     font-size:15px;
   }
-  .pub-list li:last-child{ border-bottom:none; }
-  .pub-list li::before{
-    content:counter(pub);
+  .talk-list li:last-child{ border-bottom:none; }
+  .talk-list li::before{
+    content:counter(talk);
     position:absolute; left:0; top:17px;
     font-size:12.5px; font-weight:500;
     color:var(--mauve-deep);
     width:22px; text-align:right;
   }
-  .pub-list .yr{ color:var(--mauve-deep); font-weight:500; }
-  .pub-list .venue{ font-style:italic; color:var(--muted); }
-  .pub-list .note{
+  .talk-list .yr{ color:var(--mauve-deep); font-weight:500; }
+  .talk-list .venue{ font-style:italic; color:var(--muted); }
+  .talk-list .loc{ color:var(--muted); font-size:13.5px; }
+  .badge{
     display:inline-block;
-    margin-left:6px;
-    font-size:12px;
-    color:var(--teal);
-    border:1px solid var(--mauve);
+    font-size:11px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.04em;
     border-radius:999px;
-    padding:1px 10px;
-    font-style:normal;
+    padding:2px 10px;
+    margin-left:8px;
+    vertical-align:middle;
   }
+  .badge.oral{ background:rgba(42,63,99,.08); color:var(--oral); border:1px solid var(--oral); }
+  .badge.poster{ background:rgba(138,110,126,.08); color:var(--poster); border:1px solid var(--poster); }
 
   footer{ margin-top:80px; padding-top:20px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); }
 
@@ -88,62 +95,216 @@
   <nav class="side">
     <div class="label">Menu</div>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="education-research.html">About me</a></li>
-      <li><a href="publications.html" class="current">Papers</a></li>
-      <li><a href="presentations.html">Presentations</a></li>
+      <li><a href="index.html">About me</a></li>
+      <li><a href="education-research.html">Education</a></li>
+      <li><a href="publications.html">Papers</a></li>
+      <li><a href="presentations.html" class="current">Presentations</a></li>
       <li><a href="CV_Hyunjung Joo_Aug 2026.pdf">CV</a></li>
     </ul>
   </nav>
 
   <main>
     <p class="eyebrow">Hyunjung Joo</p>
-    <h1>Papers</h1>
+    <h1>Presentations</h1>
+    <p class="sub">Conference talks and posters, reverse chronological.</p>
+    <div class="legend">
+      <span class="oral">Oral</span>
+      <span class="poster">Poster</span>
+    </div>
 
-    <section>
-      <h2>Journal articles</h2>
-      <div class="section-rule"></div>
-      <ol class="pub-list">
+    <ol class="talk-list">
+      <li><b>Joo, H.</b> &amp; Lee, G. (<span class="yr">2026</span>). Deep supervised contrastive learning of pitch contours for robust pitch accent classification in Seoul Korean. <span class="venue">The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)</span> — main conference.<span class="badge oral">Oral</span></li>
 
-        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2025</span>). The perception of lexical pitch accent in South Kyungsang Korean: The relevance of accent shape. <span class="venue">Language and Speech.</span></li>
-        <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2024</span>). Focus-induced tonal distribution in Seoul Korean as an edge-prominence language. <span class="venue">Journal of Phonetics.</span></li>
-      </ol>
-    </section>
+      <li><b>Joo, H.</b> (<span class="yr">2025</span>). Connecting discrete and continuous representation of intonation. <span class="venue">2025 Rutgers Subregular Phonology Workshop</span>, <span class="loc">NJ, USA · Nov 14–16.</span><span class="badge oral">Oral</span></li>
 
-    <section>
-      <h2>Peer-reviewed conference proceedings papers</h2>
-      <div class="section-rule"></div>
-      <ol class="pub-list">
-        <li><b>Joo, H.</b> &amp; Lee, G. (<span class="yr">2026</span>). Deep supervised contrastive learning of pitch contours for robust pitch accent classification in Seoul Korean. <span class="venue">The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026).</span> <span class="note">SAC Highlight</span></li>
-        <li><b>Joo, H.</b> &amp; Jardine, A. (<span class="yr">2025</span>). Intonation as a quantifier-free logical interpretation of metrical and prosodic structure. <span class="venue">Proceedings of the Society for Computation in Linguistics (SCiL 2025), 8(1).</span></li>
-        <li><b>Joo, H.</b> &amp; Avelino, G. (<span class="yr">2025</span>). Prosodic realization of in-situ focus in Tagalog. <span class="venue">Proceedings of the 31st Annual Meeting of the Austronesian Formal Linguistics Association, 31, 62–74.</span></li>
-        <li>Magnotti, R., George, D., Li, Z., Ji, J., <b>Joo, H.</b>, Yu, J., Ravishankar, R., Moe, L., Khalid, B., Zhang, Y., &amp; Stone, M. (<span class="yr">2023</span>). DiWBot: A cooking and DIY conversation guidance system. <span class="venue">Alexa Prize TaskBot Challenge 2 Proceedings, Amazon Science.</span></li>
-        <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). How does focus-induced prominence influence realization of edge tones and segmental anchoring in Seoul Korean? <span class="venue">Proceedings of the 20th International Congress of Phonetic Sciences (ICPhS 2023).</span></li>
-        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Perception of lexical pitch accent and rise shape in South Kyungsang Korean. <span class="venue">Proceedings of the 20th International Congress of Phonetic Sciences (ICPhS 2023).</span></li>
-        <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic structural effects on coarticulatory vowel nasalization in Australian English in comparison to American English. <span class="venue">Proceedings of the 19th International Congress of Phonetic Sciences (ICPhS 2019).</span></li>
-      </ol>
-    </section>
+      <li>Jang, J., <b>Joo, H.</b>, Kim, S., Cutler, A. &amp; Cho, T. (<span class="yr">2025</span>). Prosodic effects on coarticulatory vowel nasalization: A cross-dialectal study of American and Australian English. <span class="venue">2025 Fall Conference of the Korean Society of Speech Sciences</span>, <span class="loc">Seoul, South Korea · Oct 22.</span><span class="badge oral">Oral</span></li>
 
-    <section>
-      <h2>Abstract-reviewed conference proceedings papers</h2>
-      <div class="section-rule"></div>
-      <ol class="pub-list">
-        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Speech Prosody and Beyond workshop (SPaB 2023), Seoul, South Korea.</span></li>
-        <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Phonetics and Phonology in Europe 2023 (PaPE 2023), Nijmegen, the Netherlands.</span></li>
-        <li><b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). Tonal alignment with articulatory gestures in South Kyungsang Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language, Hanyang University, Seoul, South Korea.</span></li>
-        <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). A preliminary report on how focus-induced prominence influences realization of edge tones and segmental anchoring in Seoul Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language, Hanyang University, Seoul, South Korea.</span></li>
-        <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic boundary and prominence effects on vowel nasalization in Australian English versus American English. <span class="venue">The 2nd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language, Hanyang University, Seoul, Korea.</span></li>
-      </ol>
-    </section>
+      <li><b>Joo, H.</b> &amp; Jardine, A. (<span class="yr">2025</span>). Intonation as a quantifier-free logical interpretation of metrical and prosodic structure. <span class="venue">Society for Computation in Linguistics (SCiL 2025)</span>, <span class="loc">Oregon, USA · Aug 18–20.</span><span class="badge oral">Oral</span></li>
 
-    <section>
-      <h2>Other papers</h2>
-      <div class="section-rule"></div>
-      <ol class="pub-list">
-        <li><b>Joo, H.</b> (<span class="yr">2017</span>). Korean L2 learners' perception of English front vowels, /ɛ/ and /æ/. <span class="venue">English Studies, 37, 109–126.</span></li>
-        <li><b>Joo, H.</b> (<span class="yr">2016</span>). A relationship between Korean EFL learners' stress placement of noun-verb homographs and English proficiency. <span class="venue">SNU Working Papers in English Language and Linguistics, 14, 82–102.</span></li>
-      </ol>
-    </section>
+      <li><b>Joo, H.</b> (<span class="yr">2024</span>). Intonation as local logical interpretations. <span class="venue">2024 Rutgers Subregular Phonology Workshop</span>, <span class="loc">NJ, USA · Sept 27–29.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> &amp; Avelino, G. (<span class="yr">2024</span>). Prosodic realization of in-situ focus in Tagalog. <span class="venue">The 31st Meeting of the Austronesian Formal Linguistics Association (AFLA 31)</span>, <span class="loc">UMass, USA · June 11–14.</span><span class="badge oral">Oral</span></li>
+
+      <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). How does focus-induced prominence influence realization of edge tones and segmental anchoring in Seoul Korean? <span class="venue">The 20th International Congress of Phonetic Sciences (ICPhS 2023)</span>, <span class="loc">Prague, Czech · Aug 7–11.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Perception of lexical pitch accent and rise shape in South Kyungsang Korean. <span class="venue">The 20th International Congress of Phonetic Sciences (ICPhS 2023)</span>, <span class="loc">Prague, Czech · Aug 7–11.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Speech Prosody and Beyond workshop (SPaB 2023)</span>, <span class="loc">Seoul, South Korea · June 20–22.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Phonetics and Phonology in Europe 2023 (PaPE 2023)</span>, <span class="loc">Nijmegen, the Netherlands · June 2–4.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). Tonal alignment with articulatory gestures in South Kyungsang Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language</span>, <span class="loc">Hanyang University, Seoul · May 26–27.</span><span class="badge poster">Poster</span></li>
+
+      <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). A preliminary report on how focus-induced prominence influences realization of edge tones and segmental anchoring in Seoul Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language</span>, <span class="loc">Hanyang University, Seoul · May 26–27.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2023</span>). Perception of lexical pitch accent in South Kyungsang Korean. <span class="venue">Rutgers Linguistics Conference 2023 (RULing 2023)</span>, <span class="loc">Rutgers University, NJ, USA · May 5.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2023</span>). Case stacking in Korean: Prosodic evidence. <span class="venue">Rutgers Linguistics Conference 2023 (RULing 2023)</span>, <span class="loc">Rutgers University, NJ, USA · May 5.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic structural effects on coarticulatory vowel nasalization in Australian English in comparison to American English. <span class="venue">The 19th International Congress of Phonetic Sciences (ICPhS 2019)</span>, <span class="loc">Melbourne, Australia · Aug 5–9.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic boundary and prominence effects on vowel nasalization in Australian English versus American English. <span class="venue">The 2nd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language</span>, <span class="loc">Hanyang University, Seoul · May 24–25.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2017</span>). Korean vowel harmony on verbal conjugation. <span class="venue">2017 LSA Summer Linguistic Institute</span>, <span class="loc">University of Kentucky, USA · July 30.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2016</span>). A relationship between Korean EFL learners' stress placement of noun-verb homographs and English proficiency. <span class="venue">Gwanpojigyo (Gwanak Phonology Meeting)</span>, <span class="loc">Seoul National University, South Korea.</span><span class="badge oral">Oral</span></li>
+    </ol>
+
+    <footer>&copy; Hyunjung Joo</footer>
+  </main>
+</div>
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Hyunjung Joo">
+<title>Hyunjung Joo — Presentations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2740;
+    --muted:#5B6270;
+    --paper:#FFFFFF;
+    --line:#DAD5C9;
+    --mauve:#4A6FA5;
+    --mauve-deep:#2A3F63;
+    --teal:#1E3A5F;
+    --oral:#2A3F63;
+    --poster:#8A6E7E;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:'Inter',sans-serif; font-weight:300; font-size:16px;
+    line-height:1.7; -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--mauve-deep); text-decoration:none; border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--mauve-deep);}
+  .page{ display:flex; max-width:980px; margin:0 auto; padding:0 24px; }
+  nav.side{ position:sticky; top:0; align-self:flex-start; padding-top:96px; width:150px; flex-shrink:0; }
+  nav.side .label{ font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:10px; }
+  nav.side ul{ list-style:none; margin:0; padding:0; }
+  nav.side li a{ display:block; font-weight:500; font-size:14px; letter-spacing:.03em; color:var(--ink); padding:7px 12px; margin:2px 0; border-radius:7px; transition:background-color .15s ease, color .15s ease; }
+  nav.side li a:hover{ color:var(--mauve-deep); background:rgba(74,111,165,.08); }
+  nav.side li a.current{ color:var(--mauve-deep); background:rgba(74,111,165,.14); }
+  main{ flex:1; min-width:0; padding:88px 0 100px 56px; border-left:1px solid var(--line); }
+  .eyebrow{ font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); margin:0 0 14px 0; }
+  h1{ font-family:'Playfair Display', serif; font-weight:700; font-size:52px; line-height:1.1; margin:0 0 12px 0; color:var(--mauve-deep); letter-spacing:-0.01em; }
+  .sub{ font-size:14.5px; color:var(--muted); margin:0 0 44px 0; }
+  .legend{ display:flex; gap:14px; margin-bottom:36px; }
+  .legend span{ font-size:12px; padding:3px 12px; border-radius:999px; }
+  .legend .oral{ background:rgba(42,63,99,.08); color:var(--oral); border:1px solid var(--oral); }
+  .legend .poster{ background:rgba(138,110,126,.08); color:var(--poster); border:1px solid var(--poster); }
+
+  .talk-list{ list-style:none; margin:0; padding:0; counter-reset:talk; }
+  .talk-list li{
+    counter-increment:talk;
+    position:relative;
+    padding:16px 0 16px 34px;
+    border-bottom:1px dashed var(--line);
+    font-size:15px;
+  }
+  .talk-list li:last-child{ border-bottom:none; }
+  .talk-list li::before{
+    content:counter(talk);
+    position:absolute; left:0; top:17px;
+    font-size:12.5px; font-weight:500;
+    color:var(--mauve-deep);
+    width:22px; text-align:right;
+  }
+  .talk-list .yr{ color:var(--mauve-deep); font-weight:500; }
+  .talk-list .venue{ font-style:italic; color:var(--muted); }
+  .talk-list .loc{ color:var(--muted); font-size:13.5px; }
+  .badge{
+    display:inline-block;
+    font-size:11px;
+    font-weight:500;
+    text-transform:uppercase;
+    letter-spacing:.04em;
+    border-radius:999px;
+    padding:2px 10px;
+    margin-left:8px;
+    vertical-align:middle;
+  }
+  .badge.oral{ background:rgba(42,63,99,.08); color:var(--oral); border:1px solid var(--oral); }
+  .badge.poster{ background:rgba(138,110,126,.08); color:var(--poster); border:1px solid var(--poster); }
+
+  footer{ margin-top:80px; padding-top:20px; border-top:1px solid var(--line); font-size:12.5px; color:var(--muted); }
+
+  @media (max-width: 760px){
+    .page{ flex-direction:column; padding:0 20px; }
+    nav.side{ position:static; width:auto; padding:28px 0 0 0; }
+    nav.side ul{ display:flex; gap:18px; flex-wrap:wrap; }
+    nav.side li a{ padding:0; }
+    main{ padding:36px 0 70px 0; border-left:none; }
+    h1{ font-size:32px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <nav class="side">
+    <div class="label">Menu</div>
+    <ul>
+      <li><a href="index.html">About me</a></li>
+      <li><a href="education-research.html">Education</a></li>
+      <li><a href="publications.html">Papers</a></li>
+      <li><a href="presentations.html" class="current">Presentations</a></li>
+      <li><a href="CV_Hyunjung Joo_Aug 2026.pdf">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <p class="eyebrow">Hyunjung Joo</p>
+    <h1>Presentations</h1>
+    <p class="sub">Conference talks and posters, reverse chronological.</p>
+    <div class="legend">
+      <span class="oral">Oral</span>
+      <span class="poster">Poster</span>
+    </div>
+
+    <ol class="talk-list">
+      <li><b>Joo, H.</b> &amp; Lee, G. (<span class="yr">2026</span>). Deep supervised contrastive learning of pitch contours for robust pitch accent classification in Seoul Korean. <span class="venue">The 64th Annual Meeting of the Association for Computational Linguistics (ACL 2026)</span> — main conference.<span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2025</span>). Connecting discrete and continuous representation of intonation. <span class="venue">2025 Rutgers Subregular Phonology Workshop</span>, <span class="loc">NJ, USA · Nov 14–16.</span><span class="badge oral">Oral</span></li>
+
+      <li>Jang, J., <b>Joo, H.</b>, Kim, S., Cutler, A. &amp; Cho, T. (<span class="yr">2025</span>). Prosodic effects on coarticulatory vowel nasalization: A cross-dialectal study of American and Australian English. <span class="venue">2025 Fall Conference of the Korean Society of Speech Sciences</span>, <span class="loc">Seoul, South Korea · Oct 22.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> &amp; Jardine, A. (<span class="yr">2025</span>). Intonation as a quantifier-free logical interpretation of metrical and prosodic structure. <span class="venue">Society for Computation in Linguistics (SCiL 2025)</span>, <span class="loc">Oregon, USA · Aug 18–20.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2024</span>). Intonation as local logical interpretations. <span class="venue">2024 Rutgers Subregular Phonology Workshop</span>, <span class="loc">NJ, USA · Sept 27–29.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> &amp; Avelino, G. (<span class="yr">2024</span>). Prosodic realization of in-situ focus in Tagalog. <span class="venue">The 31st Meeting of the Austronesian Formal Linguistics Association (AFLA 31)</span>, <span class="loc">UMass, USA · June 11–14.</span><span class="badge oral">Oral</span></li>
+
+      <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). How does focus-induced prominence influence realization of edge tones and segmental anchoring in Seoul Korean? <span class="venue">The 20th International Congress of Phonetic Sciences (ICPhS 2023)</span>, <span class="loc">Prague, Czech · Aug 7–11.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Perception of lexical pitch accent and rise shape in South Kyungsang Korean. <span class="venue">The 20th International Congress of Phonetic Sciences (ICPhS 2023)</span>, <span class="loc">Prague, Czech · Aug 7–11.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Speech Prosody and Beyond workshop (SPaB 2023)</span>, <span class="loc">Seoul, South Korea · June 20–22.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> &amp; D'Imperio, M. (<span class="yr">2023</span>). Rising shape and duration affect pitch accent categorization in South Kyungsang Korean. <span class="venue">Phonetics and Phonology in Europe 2023 (PaPE 2023)</span>, <span class="loc">Nijmegen, the Netherlands · June 2–4.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). Tonal alignment with articulatory gestures in South Kyungsang Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language</span>, <span class="loc">Hanyang University, Seoul · May 26–27.</span><span class="badge poster">Poster</span></li>
+
+      <li>Hatcher, R., <b>Joo, H.</b>, Kim, S. &amp; Cho, T. (<span class="yr">2023</span>). A preliminary report on how focus-induced prominence influences realization of edge tones and segmental anchoring in Seoul Korean. <span class="venue">The 3rd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language</span>, <span class="loc">Hanyang University, Seoul · May 26–27.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2023</span>). Perception of lexical pitch accent in South Kyungsang Korean. <span class="venue">Rutgers Linguistics Conference 2023 (RULing 2023)</span>, <span class="loc">Rutgers University, NJ, USA · May 5.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2023</span>). Case stacking in Korean: Prosodic evidence. <span class="venue">Rutgers Linguistics Conference 2023 (RULing 2023)</span>, <span class="loc">Rutgers University, NJ, USA · May 5.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic structural effects on coarticulatory vowel nasalization in Australian English in comparison to American English. <span class="venue">The 19th International Congress of Phonetic Sciences (ICPhS 2019)</span>, <span class="loc">Melbourne, Australia · Aug 5–9.</span><span class="badge oral">Oral</span></li>
+
+      <li><b>Joo, H.</b>, Jang, J., Kim, S., Cho, T. &amp; Cutler, A. (<span class="yr">2019</span>). Prosodic boundary and prominence effects on vowel nasalization in Australian English versus American English. <span class="venue">The 2nd Hanyang International Symposium on Phonetics and Cognitive Sciences of Language</span>, <span class="loc">Hanyang University, Seoul · May 24–25.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2017</span>). Korean vowel harmony on verbal conjugation. <span class="venue">2017 LSA Summer Linguistic Institute</span>, <span class="loc">University of Kentucky, USA · July 30.</span><span class="badge poster">Poster</span></li>
+
+      <li><b>Joo, H.</b> (<span class="yr">2016</span>). A relationship between Korean EFL learners' stress placement of noun-verb homographs and English proficiency. <span class="venue">Gwanpojigyo (Gwanak Phonology Meeting)</span>, <span class="loc">Seoul National University, South Korea.</span><span class="badge oral">Oral</span></li>
+    </ol>
 
     <footer>&copy; Hyunjung Joo</footer>
   </main>

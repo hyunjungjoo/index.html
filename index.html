@@ -1,192 +1,291 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="utf-8">
-    <meta name="author" content="Hyunjung Joo">
-    <meta name="keywords" content="Hyunjung Joo,linguistics,Rutgers,phonology,computational linguistics">
-    <title>Hyunjung Joo</title>
-    <!-- Google Fonts with specific weights -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
-    <style type="text/css">
-        /* 전체 페이지 레이아웃 */
-        body {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300; /* 기본: Light */
-            font-size: 17px;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            display: flex;
-            flex-direction: row;
-            justify-content: center; /* 콘텐츠를 가운데 정렬 */
-            background-color: #fff;
-        }
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Hyunjung Joo">
+<meta name="keywords" content="Hyunjung Joo,linguistics,Rutgers,phonology,computational linguistics">
+<title>Hyunjung Joo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2740;
+    --muted:#5B6270;
+    --paper:#FFFFFF;
+    --paper-2:#F3EFE6;
+    --line:#DAD5C9;
+    --mauve:#4A6FA5;
+    --mauve-deep:#2A3F63;
+    --teal:#1E3A5F;
+  }
 
-        /* 왼쪽 내비게이션 */
-        ul.nav {
-            list-style-type: none;
-            margin-top: 180px;
-            margin-left: 50px;
-            padding: 8px;
-            width: 120px;
-            position: fixed; /* 항상 왼쪽에 고정 */
-            left: 0;
-            top: 0;
-        }
+  *{box-sizing:border-box;}
 
-        ul.nav li {
-            display: block;
-            padding: 8px;
-            text-align: right;
-        }
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
 
-        ul.nav li a {
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 18px;
-            font-weight: 600;
-            color: #BB9AB1;
-            display: block;
-            padding: 2px 8px;
-        }
+  a{color:var(--mauve-deep); text-decoration:none; border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--mauve-deep);}
 
-        ul.nav li a:hover {
-            background-color: #E7E3D4;
-            color: #244855;
-        }
+  /* ---------- layout ---------- */
+  .page{
+    display:flex;
+    max-width:980px;
+    margin:0 auto;
+    padding:0 24px;
+  }
 
-        /* 메인 콘텐츠 */
-        .container {
-            max-width: 850px;
-            padding: 20px;
-            margin-left: 200px; /* 왼쪽 내비게이션 공간 확보 */
-        }
+  nav.side{
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    padding-top:96px;
+    width:150px;
+    flex-shrink:0;
+  }
 
-        /* 큰 제목 (이름 등) */
-        h1 {
-            font-weight: 800; /* ExtraBold */
-            font-size: 45px;
-            color: #080F5B;
-            margin: 0;
-            padding: 10px 0;
-            text-align: center; /* 가운데 정렬 */
-        }
+  nav.side .label{
+    font-family:'Inter',sans-serif;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:10px;
+  }
 
-        /* 중간 제목 계층 */
-        h2 {
-            font-weight: 600;
-            font-size: 28px;
-            margin-top: 25px;
-            margin-bottom: 10px;
-        }
+  nav.side ul{list-style:none; margin:0; padding:0;}
 
-        h3 {
-            font-weight: 600;
-            font-size: 22px;
-            margin-top: 20px;
-            margin-bottom: 8px;
-        }
+  nav.side li a{
+    display:block;
+    font-family:'Inter',sans-serif;
+    font-weight:500;
+    font-size:14px;
+    letter-spacing:.03em;
+    color:var(--ink);
+    padding:7px 12px;
+    margin:2px 0;
+    border-radius:7px;
+    border-bottom:none;
+    transition:background-color .15s ease, color .15s ease;
+  }
+  nav.side li a:hover{ color:var(--mauve-deep); background:rgba(74,111,165,.08); }
+  nav.side li a.current{ color:var(--mauve-deep); background:rgba(74,111,165,.14); }
 
-        h4 {
-            font-weight: 600;
-            font-size: 19px;
-            margin-top: 15px;
-            margin-bottom: 6px;
-        }
+  main{
+    flex:1;
+    min-width:0;
+    padding:88px 0 100px 56px;
+    border-left:1px solid var(--line);
+  }
 
-        /* 강조 텍스트 */
-        strong, b {
-            font-weight: 600;
-        }
+  /* ---------- hero ---------- */
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:14px 0 36px 0;
+  }
 
-        /* 연락처 */
-        .contact {
-            color: #0D19A3;
-            margin: 0;
-            padding-left: 0px;
-            text-align: center; /* 가운데 정렬 */
-        }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-style:normal;
+    font-size:64px;
+    line-height:1.05;
+    margin:0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
 
-        /* 본문 */
-        .content {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 300; /* Light */
-            color: #2C2E3A;
-            font-size: 17px;
-            margin-top: 20px;
-        }
+  .contact{
+    font-size:14.5px;
+    color:var(--muted);
+    margin:0 0 48px 0;
+  }
+  .contact b{ color:var(--ink); font-weight:500; }
+  .contact .addr{ display:block; margin-top:2px; }
 
-        /* 이미지 */
-        #pic {
-            float: right;
-            height: 260px;
-            margin: 10px 40px 10px 20px;
-            border-radius: 10px;
-        }
+  .hero-row{
+    display:flex;
+    gap:36px;
+    align-items:flex-start;
+  }
 
-        table {
-            margin-top: 3px;
-        }
+  #pic{
+    width:190px;
+    height:230px;
+    object-fit:cover;
+    border-radius:2px;
+    box-shadow:0 1px 0 var(--line), 0 12px 28px -18px rgba(27,39,64,.45);
+    flex-shrink:0;
+  }
 
-        /* 링크 스타일 */
-        a:link, a:visited {
-          color: #0D19A3;
-          background-color: transparent;
-          text-decoration: none;
-        }
+  .bio p{
+    margin:0 0 14px 0;
+    color:var(--ink);
+    font-weight:300;
+  }
+  .bio p:last-child{ margin-bottom:0; }
 
-        a:hover, a:active {
-          color: #BB9AB1;
-          background-color: transparent;
-          text-decoration: none;
-        }
-    </style>
+  /* ---------- research interests ---------- */
+  section{ margin-top:56px; }
+
+  h2{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-style:normal;
+    font-size:26px;
+    margin:0 0 4px 0;
+    color:var(--ink);
+  }
+
+  .section-rule{
+    width:100%;
+    height:1px;
+    background:var(--line);
+    margin:10px 0 22px 0;
+    position:relative;
+  }
+  .section-rule::after{
+    content:"";
+    position:absolute;
+    left:0; top:-1px;
+    width:36px; height:3px;
+    background:var(--mauve);
+  }
+
+  .chips{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  .chip{
+    font-family:'Inter',sans-serif;
+    font-size:14px;
+    font-weight:500;
+    color:var(--mauve-deep);
+    background:transparent;
+    border:1px solid var(--mauve);
+    border-radius:999px;
+    padding:8px 18px;
+    cursor:pointer;
+    transition:background-color .15s ease, color .15s ease, transform .1s ease;
+  }
+  .chip:hover{
+    background:rgba(74,111,165,.08);
+  }
+  .chip:active{
+    transform:scale(.96);
+  }
+  .chip.is-active{
+    background:var(--mauve-deep);
+    border-color:var(--mauve-deep);
+    color:#fff;
+  }
+
+  footer{
+    margin-top:80px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:12.5px;
+    color:var(--muted);
+  }
+
+  @media (max-width: 760px){
+    .page{ flex-direction:column; padding:0 20px; }
+    nav.side{
+      position:static;
+      width:auto;
+      padding:28px 0 0 0;
+    }
+    nav.side ul{ display:flex; gap:18px; }
+    nav.side li a{ padding:0; }
+    main{
+      padding:36px 0 70px 0;
+      border-left:none;
+    }
+    h1{ font-size:38px; }
+    .hero-row{ flex-direction:column; }
+    #pic{ width:100%; height:auto; max-height:280px; }
+  }
+
+</style>
 </head>
 
 <body>
 
-<!-- Navigation Bar on the Left -->
-<ul class="nav">
-  <li><a href="index.html">HOME</a></li>
-  <li><a href="CV_Hyunjung Joo_Aug 2026.pdf">CV</a></li>
-    
-</ul>
+<div class="page">
 
-<!-- Main Content Area -->
-<div class="container">
-  <h1 id="hyunjung-joo">Hyunjung Joo</h1>
-  <p class="contact">
-    <b>Hanyang Institute for Phonetics and Cognitive Sciences</b><br>
-    222, Wangsimni-ro, Seoul, South Korea<br>
-    <a href="mailto:joohj0421@hanyang.ac.kr">joohj0421@hanyang.ac.kr</a>
-  </p>
+  <nav class="side">
+    <div class="label">Menu</div>
+    <ul>
+      <li><a href="index.html" class="current">About me</a></li>
+      <li><a href="education-research.html">Education</a></li>
+      <li><a href="publications.html">Papers</a></li>
+      <li><a href="presentations.html">Presentations</a></li>
+      <li><a href="CV_Hyunjung Joo_Aug 2026.pdf">CV</a></li>
+    </ul>
+  </nav>
 
-  <div class="content">
-    <p>
-      <img id="pic" src="my photo.jpg" alt="Mug shot">
-      I am a post-doctoral researcher at Hanyang Institute for Phonetics and Cognitive Sciences. She received her PhD in Linguistics from Rutgers University in 2026, with a dissertation entitled “The Representation and Computation of Intonation”. Her research includes computational, mathematical, and experimental approaches to study fundamental questions in phonological theory, specifically by mathematically analyzing the complexity of prosodic structures and validating them with deep learning and experiments.
+  <main>
+
+    <h1>Hyunjung&nbsp;Joo</h1>
+    <p class="eyebrow">Post-doctoral Researcher</p>
+
+    <p class="contact">
+      <b>Hanyang Institute for Phonetics and Cognitive Sciences</b>
+      <span class="addr">222, Wangsimni-ro, Seoul, South Korea</span>
+      <a href="mailto:joohj0421@hanyang.ac.kr">joohj0421@hanyang.ac.kr</a>
     </p>
-    <h4>Research interests:</h4>
-    <table>
-      <tr>
-        <td>
-          <ul>
-            <li>Formal language theory</li>
-            <li>Model theory/logic</li>
-            <li>Representation</li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li>Laboratory phonology</li>
-            <li>Prosody</li>
-            <li>Intonation</li>
-          </ul>
-        </td>
-      </tr>
-    </table>
-  </div>
+
+    <div class="hero-row">
+      <img id="pic" src="my photo.jpg" alt="Portrait of Hyunjung Joo">
+      <div class="bio">
+        <p>I am a post-doctoral researcher at the Hanyang Institute for Phonetics and Cognitive Sciences. I received my PhD in Linguistics from Rutgers University in 2026, with a dissertation entitled <em>“The Representation and Computation of Intonation.”</em></p>
+        <p>My research takes computational, mathematical, and experimental approaches to fundamental questions in phonological theory &mdash; mathematically analyzing the complexity of prosodic structures and validating them with deep learning and experiments.</p>
+      </div>
+    </div>
+
+    <section>
+      <h2>Research interests</h2>
+      <div class="section-rule"></div>
+      <div class="chips">
+        <button type="button" class="chip">Formal language theory</button>
+        <button type="button" class="chip">Model theory / logic</button>
+        <button type="button" class="chip">Representation</button>
+        <button type="button" class="chip">Laboratory phonology</button>
+        <button type="button" class="chip">Prosody</button>
+        <button type="button" class="chip">Intonation</button>
+      </div>
+    </section>
+
+    <footer>
+      &copy; Hyunjung Joo
+    </footer>
+
+  </main>
+
 </div>
+
+<script>
+  document.querySelectorAll('.chip').forEach(function(chip){
+    chip.addEventListener('click', function(){
+      chip.classList.toggle('is-active');
+    });
+  });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="Hyunjung Joo">
+<title>Hyunjung Joo — Education</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1B2740;
+    --muted:#5B6270;
+    --paper:#FFFFFF;
+    --line:#DAD5C9;
+    --mauve:#4A6FA5;
+    --mauve-deep:#2A3F63;
+    --teal:#1E3A5F;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    font-size:16px;
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--mauve-deep); text-decoration:none; border-bottom:1px solid transparent;}
+  a:hover{border-bottom-color:var(--mauve-deep);}
+
+  .page{
+    display:flex;
+    max-width:980px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  nav.side{
+    position:sticky;
+    top:0;
+    align-self:flex-start;
+    padding-top:96px;
+    width:150px;
+    flex-shrink:0;
+  }
+
+  nav.side .label{
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--muted);
+    margin-bottom:10px;
+  }
+
+  nav.side ul{list-style:none; margin:0; padding:0;}
+  nav.side li a{
+    display:block;
+    font-weight:500;
+    font-size:14px;
+    letter-spacing:.03em;
+    color:var(--ink);
+    padding:6px 0;
+  }
+  nav.side li a:hover{color:var(--mauve-deep);}
+  nav.side li a.current{color:var(--mauve-deep);}
+
+  main{
+    flex:1;
+    min-width:0;
+    padding:88px 0 100px 56px;
+    border-left:1px solid var(--line);
+  }
+
+  .eyebrow{
+    font-size:12px;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--teal);
+    margin:0 0 14px 0;
+  }
+
+  h1{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:52px;
+    line-height:1.1;
+    margin:0 0 44px 0;
+    color:var(--ink);
+    letter-spacing:-0.01em;
+  }
+
+  section{ margin-top:56px; }
+  section:first-of-type{ margin-top:0; }
+
+  h2{
+    font-family:'Playfair Display', serif;
+    font-weight:700;
+    font-size:26px;
+    margin:0 0 4px 0;
+    color:var(--ink);
+  }
+
+  .section-rule{
+    width:100%;
+    height:1px;
+    background:var(--line);
+    margin:10px 0 28px 0;
+    position:relative;
+  }
+  .section-rule::after{
+    content:"";
+    position:absolute;
+    left:0; top:-1px;
+    width:36px; height:3px;
+    background:var(--mauve);
+  }
+
+  /* ---------- education entries ---------- */
+  .entry{
+    display:grid;
+    grid-template-columns:1fr auto;
+    gap:2px 24px;
+    padding:20px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .entry:last-child{ border-bottom:none; }
+
+  .entry .degree{
+    grid-column:1;
+    grid-row:1;
+    font-weight:600;
+    font-size:16.5px;
+    color:var(--ink);
+  }
+  .entry .degree-group{
+    grid-column:1;
+    grid-row:1;
+  }
+  .entry .inst{
+    grid-column:1;
+    grid-row:2;
+    color:var(--ink);
+    font-size:15px;
+    margin-top:2px;
+  }
+  .entry .place{
+    grid-column:2;
+    grid-row:2;
+    text-align:right;
+    color:var(--muted);
+    font-size:13.5px;
+    font-style:italic;
+    white-space:nowrap;
+    margin-top:2px;
+  }
+  .entry .dates{
+    grid-column:2;
+    grid-row:1;
+    text-align:right;
+    color:var(--mauve-deep);
+    font-size:13.5px;
+    font-weight:500;
+    white-space:nowrap;
+  }
+  .entry .detail{
+    grid-column:1 / -1;
+    margin-top:8px;
+    font-size:14.5px;
+    color:var(--muted);
+    line-height:1.65;
+  }
+  .entry .detail b{ color:var(--ink); font-weight:500; }
+  .entry .detail .committee{ display:block; margin-top:3px; }
+
+  footer{
+    margin-top:80px;
+    padding-top:20px;
+    border-top:1px solid var(--line);
+    font-size:12.5px;
+    color:var(--muted);
+  }
+
+  @media (max-width: 760px){
+    .page{ flex-direction:column; padding:0 20px; }
+    nav.side{ position:static; width:auto; padding:28px 0 0 0; }
+    nav.side ul{ display:flex; gap:18px; }
+    nav.side li a{ padding:0; }
+    main{ padding:36px 0 70px 0; border-left:none; }
+    h1{ font-size:32px; }
+    .entry{ grid-template-columns:1fr; }
+    .entry .place, .entry .dates{ text-align:left; grid-column:1; }
+    .rexp-head{ flex-direction:column; gap:2px; }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <nav class="side">
+    <div class="label">Menu</div>
+    <ul>
+      <li><a href="index.html">About me</a></li>
+      <li><a href="education-research.html" class="current">Education</a></li>
+      <li><a href="publications.html">Papers</a></li>
+      <li><a href="presentations.html">Presentations</a></li>
+      <li><a href="CV_Hyunjung Joo_Aug 2026.pdf">CV</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <p class="eyebrow">Hyunjung Joo</p>
+    <h1>Education</h1>
+
+    <section>
+      <h2>Education</h2>
+      <div class="section-rule"></div>
+
+      <div class="entry">
+        <div class="degree">PhD, Linguistics</div>
+        <div class="dates">2021–2026</div>
+        <div class="inst">Rutgers University</div>
+        <div class="place">New Jersey, USA</div>
+        <div class="detail">
+          Dissertation: <b>“The Representation and Computation of Intonation.”</b>
+          <span class="committee">Committee: Dr. Adam Jardine (chair), Dr. Adam McCollum, Dr. Bruce Tesar, Dr. Scott Nelson.</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="degree">MA, English Language and Literature</div>
+        <div class="dates">2019–2021</div>
+        <div class="inst">Hanyang University</div>
+        <div class="place">Seoul, Korea</div>
+        <div class="detail">
+          Thesis: <b>“Tonal Alignment with Articulatory Gestures in South Kyungsang Korean.”</b>
+          <span class="committee">Committee: Dr. Taehong Cho (chair), Dr. Sahyang Kim, Dr. Say Young Kim.</span>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="degree-group">
+          <div class="degree">BA, English Language and Literature <span style="font-weight:400; color:var(--muted);">(Summa Cum Laude)</span></div>
+          <div class="degree" style="margin-top:4px;">BA, Media Communication</div>
+        </div>
+        <div class="dates">2012–2016</div>
+        <div class="inst">Chung-Ang University</div>
+        <div class="place">Seoul, Korea</div>
+      </div>
+    </section>
+
+    <footer>&copy; Hyunjung Joo</footer>
+
+  </main>
+
+</div>
+
+</body>
+</html>
